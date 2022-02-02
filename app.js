@@ -1,5 +1,9 @@
-const X_Class = 'x'
+const X_Class = 'X'
 const O_Class = 'O'
+const spaces = [];
+const someText = document.getElementById('someText');
+const resetButton = document.getElementById('resetButton');
+let currentPlayer = X_Class;
 let turnCounter = 0;
 
 let cells = document.querySelectorAll('.row > div');
@@ -7,6 +11,7 @@ let cells = document.querySelectorAll('.row > div');
 console.log(cells);
 
 let winner = []
+
 for (let i = 0; i < cells.length; i++) {
     cells[i].addEventListener('click', cellClicked);
 }
@@ -27,7 +32,7 @@ function cellClicked(event) {
     }
 }
 
-var winningCombo = [
+let winningCombo = [
     [cells[0], cells[1], cells[2]],
     [cells[1], cells[4], cells[7]],
     [cells[2], cells[5], cells[8]],
@@ -52,14 +57,41 @@ function checkWinner() {
                 console.log(oCount)
             }
         }
-        if (xCount == 3) { alert('X Wins!') }
-        else if (oCount == 3) { alert('O Wins!') }
+        if (xCount == 3) {
+            setTimeout(function () {
+                alert('X Wins!')
+                location.reload();
+            }, 0);
+        }
+        else if (oCount == 3) {
+            setTimeout(function () {
+                alert('O Wins!')
+                location.reload();
+            }, 0);
+
+        }
     }
 }
 
 function checkDraw() {
     if (turnCounter == 9) {
-        alert('It is a Draw!')
+        setTimeout(function () {
+            alert('It is a Draw!')
+            location.reload();
+        }, 0);
     }
 }
 
+const reset = () => {
+    spaces.forEach((spaces, i) => {
+        spaces.textContent = '';
+    })
+    cells.forEach(cell => {
+        cell.textContent = '';
+    })
+    someText.textContent = 'Tic Tac Toe';
+    currentPlayer = X_Class;
+    turnCounter = 0;
+}
+
+resetButton.addEventListener('click', reset)
