@@ -1,45 +1,55 @@
-html { 
+html {
   background-image: url(https://images.squarespace-cdn.com/content/v1/59da6338d2b857b11a02e17c/1564343815930-KU5RF85YYA0WBHJKNG2Y/Song+of+the+Elves+Login+Screen+full.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 #board {
-    text-align: center;
-    align-items: center;
-    padding: 3em;
-  }
-  
-  .row > div {
-    height: 100px;
-    width: 100px;
-    float: left;
-    cursor: pointer;
-    font-size: 5em;
-  }
-  
-  .row {
-    clear: both;
-    margin: 0 auto;
-    width: 302px;
-  }
-  
-  .top {
-    border-bottom: 1px black solid;
-    text-align: center;
-  }
-  
-  .bottom {
-    border-top: 1px black solid;
-  }
-  
-  .left {
-    border-right: 1px black solid;
-  }
-  
-  .right {
-    border-left: 1px black solid;
-  }
+  text-align: center;
+  align-items: center;
+  padding: 3em;
+  color: #ffff00;
+}
+
+h1 {
+  font-size: 4em;
+}
+
+.row > div {
+  height: 200px;
+  width: 200px;
+  float: left;
+  cursor: pointer;
+  font-size: 10em;
+}
+
+.row {
+  clear: both;
+  margin: 0 auto;
+  width: 604px;
+  border-color: #ffff00;
+}
+
+.top {
+  border-bottom: 2px black solid;
+  text-align: center;
+  border-color: #ffff00;
+}
+
+.bottom {
+  border-top: 2px black solid;
+  border-color: #ffff00;
+}
+
+.left {
+  border-right: 2px black solid;
+  border-color: #ffff00;
+}
+
+.right {
+  border-left: 2px black solid;
+  border-color: #ffff00;
+}
 
 #resetButton {
   text-align: center;
